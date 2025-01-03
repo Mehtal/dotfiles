@@ -1,0 +1,51 @@
+{
+	"rnedf": {
+		"prefix": "rnedf",
+		"body": [
+			"export default function ${1:name}() {\n\treturn (\n\t\t${2:body}\n\t);}"
+		]
+	},
+  "TabsLayout": {
+    "prefix": "rntl",
+    "body": [
+      "import { Tabs } from \"expo-router\";\nimport \"@/global.css\";\n\nexport default function ${1:TabsLayout}() {\n\treturn (\n\t\t${2:body}\n\t);}"
+    ]
+  },
+  "TabsTag": {
+    "prefix": ["rntt","<tab","tab"],
+    "body": [
+      "<Tabs",
+        "screenOptions={{",
+          "tabBarActiveTintColor: ${1:'tomato'},",
+          "tabBarInactiveTintColor: ${2:'gray'},",
+          "tabBarStyle: { backgroundColor: ${3:'white'}},",
+        "}}",
+      ">",
+      "$4",
+      "</Tabs>"
+    ]
+  },
+  "TabScreenTag": {
+    "prefix": ["rntst","tabsc"],
+    "body": [
+      "<Tabs.Screen",
+        "\tname=${1:'name'}",
+        "options={{",
+          "tabBarLabel: ${2:''},",
+          "tabBarIcon: ({ focused, color, size }) => (",
+            "<Icon name='$3' size={size} color={color} />",
+          "),",
+        "}}",
+      "/>"
+    ]
+  },
+  "NamedTag": {
+    "prefix": ["rnnt", "tag", "view"],
+    "body": [
+      "<${1:View}>",
+      "$2",
+      "</${1:View}>"
+    ],
+    "description": "Create a named tag with content"
+  }
+}

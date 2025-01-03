@@ -1,7 +1,7 @@
 return {
 	-- "gc" to comment visual regions/lines
 	{ "numToStr/Comment.nvim", opts = {} },
-
+	{ "norcalli/nvim-colorizer.lua" },
 	-- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
 	-- git sign

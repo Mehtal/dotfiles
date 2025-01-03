@@ -1,0 +1,35 @@
+{
+	"name": "example-snippets",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"all"
+				],
+				"path": "./snippets/all.json"
+			},
+			{
+				"language": [
+					"lua"
+				],
+				"path": "./snippets/lua.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/typescriptreact.json"
+			},
+			{
+				"language": [
+					"typescript"
+				],
+				"path": "./snippets/typescript.json"
+			},
+			{
+				"language": [
+					"javascript"
+				],
+				"path": "./snippets/javascript.json"
+			}
+		]
+	}
+}

@@ -1,8 +1,11 @@
 return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter-textobjects",
+	},
 	build = ":TSUpdate",
 	opts = {
-		ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc" },
+		ensure_installed = { "bash", "c", "html", "lua", "luadoc", "markdown", "vim", "vimdoc", "python" },
 		-- Autoinstall languages that are not installed
 		auto_install = true,
 		highlight = {
@@ -13,6 +16,41 @@ return { -- Highlight, edit, and navigate code
 			additional_vim_regex_highlighting = { "ruby" },
 		},
 		indent = { enable = true, disable = { "ruby" } },
+		textobjects = {
+			move = {
+				enable = true,
+				set_jump = true,
+				goto_next_start = {
+					["<C-f>"] = "@function.outer",
+					["<C-d>"] = "@class.outer",
+					["<C-e>"] = "@assignment",
+				},
+				goto_previous_start = {
+					["<C-s>"] = "@function.outer",
+					["<C-q>"] = "@class.outer",
+					["<C-a>"] = "@assignment",
+				},
+			},
+			select = {
+				enable = true,
+
+				-- Automatically jump forward to textobj, similar to targets.vim
+				lookahead = true,
+
+				keymaps = {
+					-- You can use the capture groups defined in textobjects.scm
+					["af"] = { query = "@function.outer", desc = "Select outer function" },
+					["if"] = { query = "@function.inner", desc = "Select inner function" },
+					["ac"] = { query = "@class.outer", desc = "Select outer  part of a class " },
+					["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+					-- You can also use captures from other query groups like `locals.scm`
+					["ii"] = { query = "@conditional.inner", desc = "Select inner part of a class region" },
+					["ai"] = { query = "@conditional.outer", desc = "Select inner part of a class region" },
+					["il"] = { query = "@loop.inner", desc = "Select inner part of a class region" },
+					["al"] = { query = "@loop.outer", desc = "Select inner part of a class region" },
+				},
+			},
+		},
 	},
 	config = function(_, opts)
 		-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
