@@ -1,0 +1,5 @@
+configuration {
+    modi: "drun,window,run";
+    font: "Fira Code 12";
+    theme: "android_notification";
+}

@@ -1,0 +1,112 @@
+configuration {
+    font: "FiraCode Nerd Font Mono 12";
+    show-icons: true;
+    icon-theme: "Adwaita";
+    drun-display-format: "{name}";
+    width: 40%;
+    lines: 8;
+    padding: 20;
+    border-radius: 8;
+    y-offset: -200;
+    location: 0;
+}
+
+* {
+    /* Text Colors */
+    text-color: #abb2bf;
+    prompt-color: #61afef;
+    placeholder-color: #6f737b;
+    
+    /* Background Colors */
+    background-color: #1e222a;
+    background-alt: #252931;
+    
+    /* Selection Colors */
+    selected-normal-foreground: #1e222a;
+    selected-normal-background: #61afef;
+    selected-active-foreground: #1e222a;
+    selected-active-background: #98c379;
+    selected-urgent-foreground: #1e222a;
+    selected-urgent-background: #e06c75;
+    
+    /* Highlight Colors */
+    active-background: #353b45;
+    active-foreground: #abb2bf;
+    urgent-background: #e06c75;
+    urgent-foreground: #1e222a;
+    normal-background: #1e222a;
+    normal-foreground: #abb2bf;
+    
+    /* Border Colors */
+    border-color: #31353d;
+    separatorcolor: #31353d;
+    
+    /* Layout */
+    spacing: 2;
+    margin: 0;
+    padding: 8;
+    element-padding: 8 16;
+    highlight: true;
+}
+
+#window {
+    background-color: #1e222a;
+    border: 2px;
+    border-color: #31353d;
+    border-radius: 8;
+}
+
+#inputbar {
+    children: [prompt, entry];
+    background-color: #252931;
+    border-radius: 4;
+    padding: 8;
+}
+
+#listview {
+    columns: 1;
+    lines: 8;
+    spacing: 4px;
+    fixed-height: false;
+}
+
+#element {
+    padding: 8px;
+    text-color: #abb2bf;
+}
+
+#element.normal.active {
+    background-color: #353b45;
+    text-color: #abb2bf;
+}
+
+#element.selected.normal {
+    background-color: #61afef;
+    text-color: #1e222a;
+}
+
+#element.selected.active {
+    background-color: #98c379;
+    text-color: #1e222a;
+}
+
+#element.selected.urgent {
+    background-color: #e06c75;
+    text-color: #1e222a;
+}
+
+#element.alternate.normal {
+    background-color: #252931;
+    text-color: #abb2bf;
+}
+
+#entry {
+    background-color: #252931;
+    text-color: #abb2bf;
+    placeholder-color: #6f737b;
+}
+
+#prompt {
+    background-color: #252931;
+    text-color: #61afef;
+}
