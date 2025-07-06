@@ -47,7 +47,7 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+#tiling_drag modifier titlebar
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
@@ -202,4 +202,4 @@ assign [class="obsidian"] $ws10
 ##### ------- usin the script to exec cmd concecutavely -------- ######
 exec_always --no-startup-id ~/.config/i3/startup.sh 
 #exec_always --no-startup-id clockify
-exec_always --no-startup-id obsidian
+#exec_always --no-startup-id obsidian
